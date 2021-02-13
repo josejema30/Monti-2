@@ -22,7 +22,8 @@ var planetita =
 var peso_final;
 
 function peso_final()
-{
+{   
+    var parrafo = document.getElementById('resultado');
     var planetitaUsuario = document.getElementById('planetita');
     var pesito = document.getElementById('pesito');
     peso = parseFloat(pesito.value);
@@ -55,17 +56,9 @@ function peso_final()
             peso_final = peso * g_saturno / g_tierra
             break;
         default:
-            document.write('<br/>')
-            document.write('<br/>')
-            document.write('<br/>')
-            peso_final = document.write ('Tienes que seleccionar un planeta válido =)');
+            parrafo.innerHTML = 'Tienes que seleccionar un planeta válido =)';
             break;
     }
-
-
-    document.write('<br/>')
-    document.write('<br/>')
-    document.write('<br/>')
-    document.write ("En " + nombre + " tu peso sería <strong>" + peso_final.toFixed('2') + "</strong> kg");
+    parrafo.innerHTML = "En " + nombre + " tu peso sería <strong>" + peso_final.toFixed('2') + "</strong> kg";
 
 }
